@@ -16,8 +16,7 @@
     <button type="submit">Save post</button>
     <button type="button" class="delete-post-btn">Delete post</button>
   </form>
-</article>
-<form class="comment-form">
+  <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
   </div>
@@ -26,4 +25,8 @@
     <button type="submit">add comment</button>
   </div>
 </form>
-{{ >comments post.comments }}
+{{> comments post.comments }}
+</article>
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>
