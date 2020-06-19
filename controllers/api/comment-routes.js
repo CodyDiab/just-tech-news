@@ -11,6 +11,19 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/:id', (req, res) => {
+  Comment.findAll({
+     where: {
+        post_id: req.params.id
+     }
+  })
+     .then(dbCommentData => res.json(dbCommentData))
+     .catch(err => {
+        console.log(err);
+        res.status(400).json(err);
+     });
+});
+
 router.post('/', (req, res) => {
   if (req.session) {
     Comment.create({
